@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Nahmobilität Niestetal</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -12,6 +12,15 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
+		<!-- Openlayers -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
+		<style>
+		  .map {
+			height: 100%;
+			width: 100%;
+		  }
+		</style>
+		<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -21,6 +30,12 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+			#map {
+        	height: 100%;
+    		}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -56,6 +71,48 @@
 						<h3>Hecken</h3>
 					</section>
 				</section>
+				<section>irgendwas</section>
+				<section>
+					<section><h3>Fahrradzonen</h3></section>
+					<section id="map" class="map">
+							
+							<script type="text/javascript">
+								var osm = new ol.layer.Tile({
+									source: new ol.source.OSM()
+								});
+						
+								var map = new ol.Map({
+									target:'map',
+									layers: [osm],
+									view: new ol.View({
+										center:[0,0],
+										zoom: 5,
+									})
+								});
+						/*
+								var electroHH = new ol.layer.Tile({
+								source: new ol.source.TileWMS({
+								  url: 'http://geodienste.hamburg.de/HH_WMS_EMobility?',
+								  params: {
+									  "LAYERS":"stromnetz_emobility",
+									  "TILED": "true",
+									}
+								})
+							  });
+						
+							  var map = new ol.Map({
+								controls: ol.control.defaults({zoom: true}),
+								layers: [osm, electroHH],
+								target: 'map',
+								view: new ol.View({
+								  center: [0, 0],
+								  zoom: 2
+								})
+							  });
+						*/	</script>
+						
+					</section>
+				</section>	
 				<section>Slide 3</section>
 			</div>
 		</div>
