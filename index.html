@@ -78,12 +78,12 @@
 					<section>
 						<h5>Ziel:</h5>
 						<ul>
-							<li>Stärkung des Radverkehrs innerhalb zusammenhängender Nebenstraßen</li>
+							<li>Stärkung des Radverkehrs</li>
 							<li>Angebotsförderung für Radverkehr als Alternative zum Kfz (Klima, Lärm)</li>
 							<li>Geschwindigkeitsdämpfende Wirkung innerhalb der Zone (Nebeneinanderfahren)</li>
 							<li>Anbindung an das überörtliche Wegenetz (Bettenhausen, Unterneustadt, Heiligenrode, Spiekershausen)</li>
 							<li>Unterstützung von Freizeitangeboten (Sportplatz, Freibad, Bücherei)</li>
-							<li>In Verbindung mit zusätzlichen Radabstellbügeln Förderung der Nahversorgung</li>
+							<li>Förderung der Nahversorgung (+Radabstellbügel)</li>
 						</ul>
 					</section>
 					<section>
@@ -104,6 +104,9 @@
 							
 							<script type="text/javascript">
 								
+								var KasselLonLat = [9.55, 51.31];
+								var KasselWebMercator = ol.proj.fromLonLat(KasselLonLat);
+
 								var osm = new ol.layer.Tile({
 									source: new ol.source.OSM()
 								});
@@ -119,12 +122,12 @@
 							  });
 						
 							  var map = new ol.Map({
-								controls: ol.control.defaults({zoom: true}),
+								controls: ol.control.defaults({zoom: false}),
 								layers: [osm, electroHH],
 								target: 'map',
 								view: new ol.View({
-								  center: [0, 0],
-								  zoom: 2
+								  center: KasselWebMercator,
+								  zoom: 14
 								})
 							  });
 							</script>
