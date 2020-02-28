@@ -137,7 +137,13 @@
 			layers: 'stromnetz_emobility',
 			format: 'image/png',
 			transparent: true
-		});	
+		});
+
+		var zonen = L.tileLayer.wms('http://163.172.133.143:8181/geoserver/nahmobilitaet/wms?',{
+			layers: 'zonen',
+			format: 'image/png',
+			transparent: true
+		});
 
 
 /*
@@ -159,6 +165,7 @@
 			"Niederschlaege_DWD": dwd,
 		//	"sg_Geodaten": sg_geodaten,
 		//	"HH_Elektro" : HH_Elektro,
+			"Fahrradzonen": zonen,
 			
 		
 		};
