@@ -30,10 +30,14 @@
 		/* map */
 
 		// initialize the map
-		var map = L.map("map").setView([51.315, 9.56], 13); 
+		var map = L.map("map").setView([51.315, 9.56], 14); 
+	/*	var map = L.map('map',{
+			center:[51.315, 9.56],
+			zoom:13,
+			layers:[osm, zonen],
+		});
 		
-		
-				
+	*/			
 		/* Geo-Location */
 		map.locate({setView: true, maxZoom: 12});
 
@@ -171,6 +175,8 @@
 		};
 
 		L.control.layers(baseLayers, overlays).addTo(map);
+		osm.addTo(map);
+		zonen.addTo(map);
 		
 
 		
