@@ -1,0 +1,2 @@
+define("util/tools",["module","jquery"],function(e,t){var n={isJQueryElement:function(e){return e&&e instanceof jQuery&&!!e[0]&&!!e[0].tagName},isValidSelector:function(e){if("string"!=typeof e)return!1;try{t(e)}catch(n){return!1}return!0}};return n});
+//@ sourceMappingURL=tools.js.map

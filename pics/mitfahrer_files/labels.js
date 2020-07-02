@@ -1,0 +1,2 @@
+define("jquery/ui/label",["jquery","jquery/ui/version","jquery/ui/escape-selector"],function(e){return function(e){return e.fn.labels=function(){var t,a,i,n,r;return this[0].labels&&this[0].labels.length?this.pushStack(this[0].labels):(n=this.eq(0).parents("label"),i=this.attr("id"),i&&(t=this.eq(0).parents().last(),r=t.add(t.length?t.siblings():this.siblings()),a="label[for='"+e.ui.escapeSelector(i)+"']",n=n.add(r.find(a).addBack(a))),this.pushStack(n))}}(e),e});
+//@ sourceMappingURL=labels.js.map
